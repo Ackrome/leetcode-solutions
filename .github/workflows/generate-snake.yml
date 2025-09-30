@@ -1,0 +1,43 @@
+name: Generate LeetCode Contribution Snake
+
+on:
+  # Run this workflow manually from the Actions tab
+  workflow_dispatch:
+  
+  # Run this workflow automatically on a schedule
+  schedule:
+    # Runs every 12 hours
+    - cron: "0 */8 * * *"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Generate Snake Animation
+        uses: Platane/snk@v3
+        with:
+          # Your GitHub username
+          github_user_name: ${{ github.repository_owner }}
+          
+          # A list of colors for the snake, matching the green theme
+          # Feel free to customize these colors
+          color_snake: "#59D561"
+          color_dots: "#30363d,#39d353,#26a641,#006d32,#0e4429"
+
+          # The output file for the animation
+          # The action will create a branch named "output" and place the file there
+          outputs: dist/snake.svg
+
+      - name: Deploy to output branch
+        uses: crazy-max/ghaction-github-pages@v4
+        with:
+          target_branch: output
+          build_dir: dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
