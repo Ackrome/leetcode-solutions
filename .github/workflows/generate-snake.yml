@@ -19,7 +19,8 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Generate LeetCode-style contribution grid
-        uses: grubersjoe/github-contributions-svg@v1.2.0
+        # <<< THIS LINE IS CORRECTED
+        uses: grubersjoe/github-contributions-grid-svg@main
         with:
           # Your GitHub username
           github_user_name: ${{ github.repository_owner }}
@@ -28,7 +29,6 @@ jobs:
           svg_file_path: "contributions.svg"
           
           # Customization URL to match LeetCode theme
-          # This is where we define the colors
           custom_url: "https://github-contributions.vercel.app/api/v1/${{ github.repository_owner }}?color_scheme=dark&bg_color=0D1117&border_color=0D1117&color_4=59D561&color_3=39d353&color_2=26a641&color_1=006d32"
           
           # The comment markers from your README
