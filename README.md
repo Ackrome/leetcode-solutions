@@ -1,4 +1,10 @@
-### My LeetCode Activity Calendar
+### Ackrome_'s LeetCode Stats & Activity
 
-<!--START_SECTION:contributions-grid-->
-<!--END_SECTION:contributions-grid-->
+<p align="center">
+  <a href="https://leetcode.com/Ackrome_/">
+    <img 
+      src="https://leetcard.jacoblin.cool/Ackrome_?theme=dark&ext=heatmap&border=4" 
+      alt="Ackrome_'s LeetCode Stats"
+    />
+  </a>
+</p>
